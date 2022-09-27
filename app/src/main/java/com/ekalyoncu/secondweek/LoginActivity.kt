@@ -44,17 +44,19 @@ class LoginActivity : AppCompatActivity() {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
                 override fun afterTextChanged(editable: Editable?) {
+                    // Her girilen karakterde değişkenin değerini günceller.
                     password = editable.toString()
                 }
             }
         )
 
         buttonSignUp.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
+            val intent = Intent(this, SignUpActivity::class.java) // Sonraki Activity için intent oluşturur.
+            startActivity(intent) // Intenti çağırır.
         }
 
         buttonLogin.setOnClickListener {
+            // Login düğmesine tıklayınca ekranda Toast message gösterir.
             Toast.makeText(this, "Email: $email, Password: $password", Toast.LENGTH_LONG).show()
         }
 
